@@ -7,6 +7,9 @@ namespace Validationtask
     {
         static void Main(string[] args)
         {
+
+            #region Initialization of idx values
+
             decimal resultTotal = 0;
             int idxSize = 0;
             int idxbradName = 0;
@@ -15,6 +18,14 @@ namespace Validationtask
             int idxPrice = 0;
             int idxCount = 0;
 
+            int[] sizes = new int[2];
+            string[] brandNames = new string[2];
+            string[] categories = new string[2];
+            string[] colors = new string[2];
+            decimal[] prices = new decimal[2];
+            int[] counts = new int[2];
+            #endregion
+
             while (true)
             {
                 Console.WriteLine("=============================================================================================");
@@ -22,12 +33,6 @@ namespace Validationtask
 
                 #region Arrays
 
-                int[] sizes = new int[2];
-                string[] brandNames = new string[2];
-                string[] categories = new string[2];
-                string[] colors = new string[2];
-                decimal[] prices = new decimal[2];
-                int[] counts = new int[2];
 
                 #endregion
 
@@ -174,7 +179,7 @@ namespace Validationtask
 
                 #endregion
 
-                #region
+                #region Count validation
 
                 while (true)
                 {
@@ -193,8 +198,12 @@ namespace Validationtask
 
                 #endregion
 
+                #region Final price calculator
+
                 decimal individualTotal = count * price;
                 resultTotal = resultTotal + individualTotal;
+
+                #endregion
 
                 Console.WriteLine($"Size : {size},  Color : {color}, Brand name : {brandName}, Category : {category}, Price : {price}, Count : {count}, Total : {individualTotal}");
                 Console.WriteLine("=============================================================================================");
